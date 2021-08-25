@@ -7,7 +7,15 @@
             @csrf
             <div class="form-group">                  
                 <label for="exampleInputEmail1">User Name</label>
-                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="User Name">
+                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="User Name" required>
+                </div>
+                <div class="form-group">                  
+                <label for="exampleInputEmail1">Address</label>
+                <input type="text" name="address" class="form-control" id="exampleInputEmail1" placeholder="Adress" required>
+                </div>
+                <div class="form-group">                  
+                <label for="exampleInputEmail1">Contact Number</label>
+                <input type="tel" name="contact_no" class="form-control" id="exampleInputEmail1" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" placeholder="Contact Number" required>
                 </div>
                 <div class="form-group">                  
                 <label for="exampleInputEmail1">Email address</label>
@@ -16,6 +24,10 @@
                 <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="Confirm your Password">
                 </div>
                 <button type="submit" class="btn btn-default">Register</button>
             </form>

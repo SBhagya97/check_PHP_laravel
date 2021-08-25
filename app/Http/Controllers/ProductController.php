@@ -101,7 +101,7 @@ class ProductController extends Controller
         $total= $products= DB::table('cart')
          ->join('products','cart.product_id','=','products.id')
          ->where('cart.user_id',$userId)
-         ->sum('products.price');
+         ->sum('cart.gross_price');//->sum('products.price');
  
          return view('ordernow',['total'=>$total]);
     }
