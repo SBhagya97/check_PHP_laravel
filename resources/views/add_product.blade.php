@@ -57,17 +57,17 @@
           <label class="col-sm-3 control-label">Existance</label>
           <div class="col-sm-3">
             <label class="control-label small" for="date_start">MFD: </label>
-            <input type="date" class="form-control" name="MFD" id="date_start" placeholder="Manufacture Date">
+            <input type="date" class="form-control" name="MFD" id="date_start" placeholder="Manufacture Date" required>
           </div>
           <div class="col-sm-3">
             <label class="control-label small" for="date_finish">EXP:</label>
-            <input type="date" class="form-control" name="EXP" id="date_finish" placeholder="Expiration Date">
+            <input type="date" class="form-control" name="EXP" id="date_finish" placeholder="Expiration Date" required>
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Thumbnails</label>
           <div class="col-sm-3">
-            <label class="control-label small" for="file_img">images (jpg/png):</label> <input type="file" name="img">
+            <label class="control-label small" for="file_img">images (jpg/png):</label> <input type="file" name="img" required>
           </div>
         </div> <!-- form-group // -->
 

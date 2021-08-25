@@ -188,23 +188,27 @@ class ProductController extends Controller
         
         
     }
-    // function editProductUpdate(Request $req, $id){
+    function editProductUpdate(Request $req, $id){
+        //return "hello";
 
-    //     $image= $req->img;
-    //     $imagename=time().'.'.$image->getClientOriginalExtension();
-    //         //$req->image->move('product_image',$imagename);
-    //         $image->move('product_image',$imagename);
+        $image= $req->img;
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+            //$req->image->move('product_image',$imagename);
+            $image->move('product_image',$imagename);
 
 
-    //     Product::where('id',$id)->update([
-    //         'name'=>$req->input,'galley'=>$imagename,
-        
-            
-        
+      Product::where('id',$id)->update([
+             'price'=>$req->price,
+                'quantity'=>$req->quantity,
+                'description'=>$req->desc,
+                'MFD'=>$req->MFD,
+                'EXP'=>$req->EXP,
+                'gallery'=>$imagename         
+                  
            
-    //    // /]);
-
-    // }
+    ]);
+    return redirect('my_product');
+    }
 
 
     

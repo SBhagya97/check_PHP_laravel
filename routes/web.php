@@ -43,7 +43,8 @@ Route::post("/add_product",[ProductController::class,'add']);
 Route::get("my_product",[ProductController::class,'my_product']);
 Route::get("removeProduct/{id}",[ProductController::class,'removeProduct']);
 Route::get("edit_product/{id}",[ProductController::class,'editProduct']);
-// Route::post("/edit_product",[ProductController::class,'editProduct']);
+Route::post("/edit_product/{id}",[ProductController::class,'editProductUpdate'])->name('productUpdate');
+// Route::get("editProductUpdate/{id}",[ProductController::class,'editProductUpdate']);
  
  
 

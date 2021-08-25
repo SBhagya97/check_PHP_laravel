@@ -8,14 +8,20 @@
     </div>
     <div class="panel-body">
 
-      <form action="{{url('edit_product')}}" method= "POST"class="form-horizontal" role="form" enctype="multipart/form-data">
-      @csrf
+      
+      <!-- {{url('edit_product')}} // -->
+      
+      
          
-      @foreach($products as $item)
-        <div class="form-group">
+     @php
+        $item = $products[0];
+     @endphp
+      <form action="{{route('productUpdate',$item->id)}}" method= "POST"class="form-horizontal" role="form" enctype="multipart/form-data">
+      @csrf
+      <div class="form-group">
           <label for="name" class="col-sm-3 control-label">Product Name</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Name the product" readonly value="{{$item->name}}">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name the product"  value="{{$item->name}}">
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
@@ -58,10 +64,14 @@
 
         <hr>
         <div class="form-group">
+            
           <div class="col-sm-offset-3 col-sm-9">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" >Edit</button>
           </div>
-          @endforeach
+         <!-- form-group //  <div class="col-sm-3" style="padding-top: 20px;">                             
+                <a  class="btn btn-primary" type="submit" >Edit </a>
+             </div>-->
+
         </div> <!-- form-group // -->
       </form>
 
