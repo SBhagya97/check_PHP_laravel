@@ -8,7 +8,8 @@ class UserController extends Controller
 {
     //
     function login(Request $req)
-    {
+    {   
+        $admin="admin1997@gmail.com";
         $user= User::where(['email'=>$req->email])->first();
         if(!$user || !Hash::check($req->password,$user->password))
         {

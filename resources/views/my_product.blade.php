@@ -5,6 +5,7 @@
         <div class="trending-wrapper">
             <h4>My Products</h4>
             
+
             @foreach($products as $item)
             <div class=" row searched-item cart-list-devider">
              <div class="col-sm-3">
@@ -19,7 +20,12 @@
                     </div>
              </div>
              <div class="col-sm-3">
-                <a href="/removeProduct/{{$item->user_id}}" class="btn btn-warning" >Remove Product</a>
+                <a href="/removeProduct/{{$item->id}}" class="btn btn-warning" >Remove Product</a>              
+                
+             </div>
+             
+             <div class="col-sm-3" style="padding-top: 20px;">                             
+                <a href="/edit_product/{{$item->id}}" class="btn btn-warning" >Edit Product</a>
              </div>
             </div>
             @endforeach

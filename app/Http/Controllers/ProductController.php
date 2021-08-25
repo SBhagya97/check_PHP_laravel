@@ -160,16 +160,51 @@ class ProductController extends Controller
     }
     function my_product()
     {
+       //return "hello";
         $userId=Session::get('user')['id'];
-        //$allProduct= Product::where('user_id',$userId)->get();
-        return Product::where('user_id',$userId)->count();
+        $products= DB::table('products')
+         ->where('products.user_id',$userId)
+        ->select('products.*')
+        ->get();
+        return view('my_product',['products'=>$products]);
+        //return Product::where('user_id',$userId)->count();
 
     }
     function removeProduct($id)
     {
+        
         Product::destroy($id);
         return redirect('my_product');
     }
+    function editProduct($id)
+    {
+        $products=  Product::where('id',$id)->get();
+        return view('edit_product')->with(['products'=>$products]);
+
+
+
+        
+
+        
+        
+    }
+    // function editProductUpdate(Request $req, $id){
+
+    //     $image= $req->img;
+    //     $imagename=time().'.'.$image->getClientOriginalExtension();
+    //         //$req->image->move('product_image',$imagename);
+    //         $image->move('product_image',$imagename);
+
+
+    //     Product::where('id',$id)->update([
+    //         'name'=>$req->input,'galley'=>$imagename,
+        
+            
+        
+           
+    //    // /]);
+
+    // }
 
 
     
