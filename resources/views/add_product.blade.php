@@ -40,7 +40,7 @@
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
-          <label for="name" class="col-sm-3 control-label">Quantity</label>
+          <label for="name" class="col-sm-3 control-label">Quantity Available</label>
           <div class="col-sm-9">
             <input type="number" class="form-control" name="quantity" id="name" placeholder="Quantity As kg" required>
           </div>
