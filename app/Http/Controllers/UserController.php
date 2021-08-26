@@ -22,7 +22,12 @@ class UserController extends Controller
     }
 
     function register(Request $req)
+    
     {
+
+        $this->validate($req,[            
+            'email'=>'required|email',            
+            ]);
         //return $req -> input();
         $User = new User;
         $User->name=$req->name;
